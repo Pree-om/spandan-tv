@@ -13,8 +13,7 @@ Welcome to the official repository of **SPANDAN TV ODISHA**, a television channe
   - [🎭 Engaging Entertainment](#-engaging-entertainment)  
   - [🏆 Reality Shows](#-reality-shows)  
   - [📚 Story Time](#-story-time)  
-  - [❓ Interactive Q&A Sessions](#-interactive-q-a-sessions)  
-- [🔥 Popular Videos](#-popular-videos)  
+  - [❓ Interactive Q&A Sessions](#-interactive-q-a-sessions)    
 - [📞 Contact Us](#-contact-us)  
 - [📜 License](#-license)  
 
@@ -63,15 +62,6 @@ Our **Story Time** videos present tales of history, mythology, and folklore, dee
 ### ❓ Interactive Q&A Sessions  
 
 We foster interaction with our audience through **Q&A sessions**, where viewers can ask questions about various topics—be it spirituality, entertainment, or lifestyle. These sessions provide a direct platform for communication and engagement with experts, artists, and celebrities.  
-
-## 🔥 Popular Videos  
-
-Check out some of our popular videos:  
-
-📌 [Video Title 1](https://www.youtube.com/watch?v=example1)  
-📌 [Video Title 2](https://www.youtube.com/watch?v=example2)  
-
-*Note: Replace the example links with actual video URLs.*  
 
 ## 📞 Contact Us  
 
