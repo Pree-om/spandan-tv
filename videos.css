@@ -1,0 +1,174 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    text-align: center;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 5%;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 10vw;
+    max-width: 100px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2vw;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.menu-btn:hover {
+    color: #f4b400;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50px;
+    background-color: #444;
+    min-width: 120px;
+    max-width: 20vw;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 2vh 1vw;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+.show-dropdown {
+    display: block;
+}
+
+/* Main Content */
+main {
+    padding-top: 10vh;
+    margin-top: 80px;
+}
+
+h1 {
+    font-size: 3vw;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px black;
+}
+
+.video-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    flex-wrap: wrap;
+    padding: 5vh 0;
+}
+
+.video-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 2vh;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 30vw;
+    max-width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.video-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+/* Footer */
+footer {
+    background: black;
+    padding: 0.1vh;
+    font-size: 0.2vw;
+}
+
+/* Fade-in Effect */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Media Queries */
+
+/* For laptops */
+@media (min-width: 1024px) and (max-width: 1440px) {
+    header {
+        padding: 15px 3%;
+    }
+
+    .logo img {
+        width: 90px;
+    }
+
+    .menu-btn {
+        font-size: 22px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .video-card {
+        width: 28vw;
+    }
+}
+
+/* For tablets and small laptops */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 3%;
+    }
+
+    .logo img {
+        width: 90px;
+    }
+
+    .menu-btn {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .video-card {
+        width: 45vw;
+    }
+}
+
