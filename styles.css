@@ -13,19 +13,20 @@
     --ease-cinematic: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--studio-bg);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-body {
-    background-color: var(--studio-bg);
-    color: var(--studio-white);
-    font-family: var(--font-sans);
-    line-height: 1.65;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
 }
 
 .wide-container {
@@ -36,100 +37,78 @@ body {
 }
 
 /* ==========================================================================
-   2. MINIMALIST BLUR HEADER
+   2. INLINE NAVIGATION HEADER (ALL DEVICES)
    ========================================================================== */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 32px 64px;
+    padding: 24px 48px;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     background: linear-gradient(to bottom, rgba(5,5,6,0.95) 0%, rgba(5,5,6,0) 100%);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-sizing: border-box;
 }
 
 header .logo img {
-    height: 40px;
+    height: 44px;
     width: auto;
+    display: block;
 }
 
 .nav-links {
     display: flex;
-    gap: 48px;
+    gap: 32px;
+    align-items: center;
 }
 
 .nav-links a {
     color: var(--studio-dim);
     text-decoration: none;
+    font-family: var(--font-sans);
     font-weight: 500;
     font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     transition: var(--ease-cinematic);
 }
 
-.nav-links a:hover, .nav-links a.active {
-    color: var(--studio-white);
+.nav-links a:hover, 
+.nav-links a.active {
+    color: var(--studio-white) !important;
 }
 
-.dropdown-menu { display: none; }
+.dropdown-menu, .menu-btn, .dropdown-content {
+    display: none !important;
+}
 
 /* ==========================================================================
-   3. HERO AREA: CLEAN UNBOXED FULL-BLEED FLAT IMAGE
+   3. HERO AREA: FULL-BLEED SEAMLESS WALLPAPER ENGINE
    ========================================================================== */
 #hero {
     padding: 0;
     margin: 0;
     width: 100%;
     overflow: hidden;
-    background-color: var(--studio-bg);
 }
 
 .hero-banner-flat {
     position: relative;
     width: 100%;
-    /* Instead of a rigid 100vh which crops your text, we use auto height 
-       combined with the exact 16:9 widescreen proportions of the image graphic */
     height: auto;
-    aspect-ratio: 16 / 9; 
-    
+    aspect-ratio: 16 / 9; /* Sharp, flawless scale for laptops & tablets */
     background-image: url('./hero-banner.png');
-    background-size: 100% 100%; /* Spreads the image fully to all borders with no text cutoff */
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
 /* ==========================================================================
-   OPTIONAL: MOBILE DISPLAY OPTIMIZATION (Phones & Tablets)
-   ========================================================================== */
-@media (max-width: 1024px) {
-    .hero-banner-flat {
-        height: auto;
-        aspect-ratio: 16 / 9; /* Maintains perfect proportional scale on iPads/tablets */
-        background-size: 100% 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-banner-flat {
-        /* On narrow vertical smartphone screens, a pure 16:9 banner can look quite thin.
-           If you want to force it taller on phones while keeping the text visible, 
-           uncomment the lines below to switch to a cropped focal arrangement: */
-        
-        /* 
-        height: 55vh; 
-        aspect-ratio: auto;
-        background-size: cover;
-        background-position: 28% center; 
-        */
-    }
-}
-
-/* ==========================================================================
-   4. OPEN EDITORIAL WRAPPERS
+   4. EDITORIAL WRAPPERS & SECTIONS (VISIBLE TEXT HEADINGS FIX)
    ========================================================================== */
 #manifesto {
     padding: 120px 0;
@@ -190,6 +169,7 @@ header .logo img {
     margin-bottom: 24px;
 }
 
+/* FIX: Forces all module segment titles (Devotion, Music, etc) to crisp visible white */
 .editorial-text-block h3 {
     font-family: var(--font-display);
     font-size: clamp(2rem, 4vw, 3rem);
@@ -197,6 +177,7 @@ header .logo img {
     line-height: 1.15;
     margin-bottom: 24px;
     letter-spacing: -0.5px;
+    color: var(--studio-white) !important;
 }
 
 .editorial-text-block p {
@@ -205,7 +186,7 @@ header .logo img {
     line-height: 1.75;
 }
 
-/* Studio Breakouts */
+/* FIX: Forces the centerpiece cinematic statement title to brilliant bright white */
 .cinematic-quote-block {
     text-align: center;
     max-width: 1000px;
@@ -222,6 +203,7 @@ header .logo img {
     line-height: 1.2;
     letter-spacing: -1px;
     margin-bottom: 20px;
+    color: var(--studio-white) !important;
 }
 
 .studio-subtext {
@@ -236,12 +218,8 @@ header .logo img {
 .marquee-ticker {
     padding: 32px 0;
     overflow: hidden;
-    width: 100%; /* Changed from 100vw to 100% to stop side bleeding */
+    width: 100%;
     position: relative;
-    left: 0;
-    right: 0;
-    margin-left: 0;
-    margin-right: 0;
     background-color: #0d0d0f;
     margin-bottom: 140px;
 }
@@ -272,11 +250,11 @@ header .logo img {
 #one-stop-destination { padding: 80px 0; }
 .text-center { text-align: center; }
 .minimal-line { border: 0; height: 1px; background: rgba(255, 255, 255, 0.1); margin: 48px 0; }
-#one-stop-destination h2 { font-family: var(--font-display); font-size: 2.8rem; margin-bottom: 24px; }
+#one-stop-destination h2 { font-family: var(--font-display); font-size: 2.8rem; color: var(--studio-white); margin-bottom: 24px; }
 #one-stop-destination p { max-width: 900px; margin: 0 auto; color: var(--studio-dim); font-size: 1.2rem; line-height: 1.7; }
 
 #videos { padding: 100px 0; }
-.section-title { font-family: var(--font-display); font-size: 3rem; margin-bottom: 64px; }
+.section-title { font-family: var(--font-display); font-size: 3rem; color: var(--studio-white); margin-bottom: 64px; }
 .video-display-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
 .video-frame-card { background: #0c0c0e; border-radius: 16px; overflow: hidden; transition: var(--ease-cinematic); }
 .video-frame-card:hover { transform: translateY(-8px); }
@@ -298,6 +276,7 @@ header .logo img {
 #contact h2 {
     font-family: var(--font-display);
     font-size: 3rem;
+    color: var(--studio-white);
     margin-bottom: 56px;
 }
 
@@ -345,46 +324,47 @@ footer {
 }
 
 /* ==========================================================================
-   8. MEDIA QUERIES
+   8. UNIFIED RESPONSIVE ADAPTATION ENGINE (SMARTPHONE CUTOFF FIX)
    ========================================================================== */
 @media (max-width: 1024px) {
+    header {
+        padding: 16px 20px;
+    }
+
+    header .logo img {
+        height: 32px;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* THE MOBILE IMAGE ADAPTATION: Uses contain to show 100% of the image text safely */
+    .hero-banner-flat {
+        height: auto !important;
+        aspect-ratio: 16 / 9 !important;
+        background-size: contain !important;
+        background-position: center center !important;
+        margin-top: 76px; /* Prevents navigation header links from clouding your banner design */
+    }
+
     .editorial-row, .editorial-row.reverse {
         grid-template-columns: 1fr;
         gap: 40px;
         margin-bottom: 96px;
     }
-    .editorial-image-block { height: 400px; }
-    .video-display-grid { grid-template-columns: 1fr; gap: 32px; }
-    .nav-links { display: none; }
-    .dropdown-menu { display: block; }
-    header { padding: 24px 32px; }
-    .hero-banner-flat { height: 60vh; }
-}
-@media (max-width: 1200px) { /* Increased from 1024px to protect small laptop screens */
-    .editorial-row, .editorial-row.reverse {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        margin-bottom: 96px;
-    }
+    
     .editorial-image-block { 
-        height: 400px; 
+        height: 320px; 
     }
+    
     .video-display-grid { 
-        grid-template-columns: 1fr; /* Snaps safely to single column on phones and laptops */
+        grid-template-columns: 1fr; 
         gap: 32px; 
     }
-    header { 
-        padding: 24px 32px; 
-    }
-    .hero-banner-flat { 
-        height: 60vh; 
-    }
-}
-html, body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden; /* Force blocks to cut off any stray horizontal layout spill */
-    -webkit-font-smoothing: antialiased;
 }
