@@ -1,61 +1,167 @@
-/* Our Team Page Styles */
-#team {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 5vh 0;
-    border-radius: 10px;
-    width: 80%;
-    margin: auto;
+/* ==========================================================================
+   1. TEAM HERO CONFIGURATION
+   ========================================================================== */
+#team-hero {
+    padding: 200px 0 60px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
-.team-container {
+.page-indicator {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    margin-bottom: 24px;
+}
+
+.page-main-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.page-subtitle {
+    max-width: 750px;
+    font-size: 1.2rem;
+    color: var(--studio-dim);
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. EDITORIAL DIRECTORY LIST SYSTEM (No Rigid Boxes)
+   ========================================================================== */
+#team-directory {
+    padding: 60px 0 140px 0;
+}
+
+.directory-list {
     display: flex;
     flex-direction: column;
+    width: 100%;
+}
+
+.directory-item {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 48px;
+    padding: 56px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     align-items: center;
-    gap: 2vh;
+    transition: var(--ease-cinematic);
 }
 
-.team-card {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    width: 60%;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
+.directory-item:hover {
+    border-bottom-color: var(--studio-white);
 }
 
-.team-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+.item-meta {
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
-h2 {
-    color: #f4b400;
-    font-size: 1.5em;
+.index-num {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--accent-gold);
+    font-weight: 500;
 }
 
-p {
-    font-size: 1.2em;
-    color: white;
+.item-meta h3 {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--studio-dim);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .team-card {
-        width: 80%;
+.directory-item:hover .item-meta h3 {
+    color: var(--studio-white);
+}
+
+.item-value-box {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.member-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3.2vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--studio-white);
+    transition: var(--ease-cinematic);
+}
+
+/* Subtle accent highlight for the developer track */
+.highlight-dev .member-name {
+    color: var(--accent-gold);
+}
+
+.support-team-names {
+    font-family: var(--font-sans);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--studio-dim);
+    letter-spacing: 0.5px;
+}
+
+.directory-item:hover .support-team-names {
+    color: var(--studio-white);
+}
+
+/* ==========================================================================
+   3. RESPONSIVE MEDIA ADAPTATION
+   ========================================================================== */
+@media (max-width: 968px) {
+    #team-hero {
+        padding: 140px 0 40px 0;
+    }
+    
+    .directory-item {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 40px 0;
+        align-items: flex-start;
+    }
+    
+    .item-meta {
+        gap: 24px;
     }
 }
-
-@media (max-width: 480px) {
-    .team-card {
-        width: 90%;
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Force blocks to cut off any stray horizontal layout spill */
+    -webkit-font-smoothing: antialiased;
+}
+@media (max-width: 1200px) { /* Increased from 1024px to protect small laptop screens */
+    .editorial-row, .editorial-row.reverse {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 96px;
     }
-
-    h2 {
-        font-size: 1.2em;
+    .editorial-image-block { 
+        height: 400px; 
     }
-
-    p {
-        font-size: 1em;
+    .video-display-grid { 
+        grid-template-columns: 1fr; /* Snaps safely to single column on phones and laptops */
+        gap: 32px; 
+    }
+    header { 
+        padding: 24px 32px; 
+    }
+    .hero-banner-flat { 
+        height: 60vh; 
     }
 }
