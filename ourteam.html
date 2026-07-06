@@ -4,63 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Team - SPANDAN TV ODISHA</title>
+    <!-- Google Fonts for Luxury Studio Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="ourteam.css">
 </head>
 <body>
 
-    <!-- Header section -->
+    <!-- Header Section -->
     <header>
-        <div class="logo">
-            <h1>SPANDAN TV ODISHA</h1>
-        </div>
-        <div class="dropdown-menu">
-            <button class="menu-btn">☰</button>
-            <div class="dropdown-content">
-                <a href="index.html">Home</a>
-                <a href="videos.html">Videos</a>
-                <a href="ourteam.html">Our Team</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </div>
-    </header>
+    <div class="logo">
+        <img src="./LOGO PNG NEW.png" alt="SPANDAN TV ODISHA Logo">
+    </div>
 
-    <!-- Our Team Section -->
+    <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="./videos.html">Videos</a>
+        <a href="./ourteam.html">Our Team</a>
+        <a href="./contact.html">Contact</a>
+    </nav>
+
+    <details class="dropdown-menu">
+        <summary class="menu-btn">☰</summary>
+
+        <div class="dropdown-content">
+            <a href="index.html">Home</a>
+            <a href="./videos.html">Videos</a>
+            <a href="./ourteam.html">Our Team</a>
+            <a href="./contact.html">Contact</a>
+        </div>
+    </details>
+</header>
+
     <main>
-        <section id="team" class="fade-in">
-            <h1>Meet Our Team</h1>
-            <div class="team-container">
-                <div class="team-card">
-                    <h2>Producer</h2>
-                    <p>B. SABITA & S. SAGAR</p>
-                </div>
-                <div class="team-card">
-                    <h2>Music</h2>
-                    <p>BASUDEV BINDHANI</p>
-                </div>
-                <div class="team-card">
-                    <h2>Creative Head</h2>
-                    <p>PRADEEP KUMAR</p>
-                </div>
-                <div class="team-card">
-                    <h2>Creative Advisor</h2>
-                    <p>SUBRAT KUMAR</p>
-                </div>
-                <div class="team-card">
-                    <h2>Website Devloper</h2>
-                    <p>PREE OM</p>
-                </div>
-                <div class="team-card">
-                    <h2>Creative Support</h2>
-                    <p>PRANA KRUSHNA, SANYASI, LIPU, BINU, BIKRAM, JITU & SUCHANA</p>
+        <!-- Page Introduction Title Block -->
+        <section id="team-hero" class="fade-in">
+            <div class="wide-container">
+                <span class="page-indicator">// THE MINDSET</span>
+                <h1 class="page-main-title">Meet Our Team</h1>
+                <p class="page-subtitle">The creative visionaries, storytellers, and technical architects driving the pulse of cultural broadcasting across Odisha.</p>
+            </div>
+        </section>
+
+        <!-- Asymmetric Open Editorial Team Directory System -->
+        <section id="team-directory" class="fade-in">
+            <div class="wide-container">
+                <div class="directory-list">
+                    
+                    <!-- Member 1: Producers -->
+                    <div class="directory-item">
+                        <div class="item-meta">
+                            <span class="index-num">01</span>
+                            <h3>Producer</h3>
+                        </div>
+                        <div class="item-value-box">
+                            <h2 class="member-name">B. SABITA & S. SAGAR</h2>
+                        </div>
+                    </div>
+
+                    <!-- Member 2: Music -->
+                    <div class="directory-item">
+                        <div class="item-meta">
+                            <span class="index-num">02</span>
+                            <h3>Music Director</h3>
+                        </div>
+                        <div class="item-value-box">
+                            <h2 class="member-name">BASUDEV BINDHANI</h2>
+                        </div>
+                    </div>
+
+                    <!-- Member 3: Creative Head -->
+                    <div class="directory-item">
+                        <div class="item-meta">
+                            <span class="index-num">03</span>
+                            <h3>Creative Head</h3>
+                        </div>
+                        <div class="item-value-box">
+                            <h2 class="member-name">PRADEEP KUMAR</h2>
+                        </div>
+                    </div>
+
+                    <!-- Member 4: Creative Advisor -->
+                    <div class="directory-item">
+                        <div class="item-meta">
+                            <span class="index-num">04</span>
+                            <h3>Creative Advisor</h3>
+                        </div>
+                        <div class="item-value-box">
+                            <h2 class="member-name">SUBRAT KUMAR</h2>
+                        </div>
+                    </div>
+
+                    <!-- Member 5: Website Developer -->
+                    <div class="directory-item highlight-dev">
+                        <div class="item-meta">
+                            <span class="index-num">05</span>
+                            <h3>Website Developer</h3>
+                        </div>
+                        <div class="item-value-box">
+                            <h2 class="member-name">PREE OM</h2>
+                        </div>
+                    </div>
+
+                    <!-- Member 6: Creative Support -->
+                    <div class="directory-item">
+                        <div class="item-meta">
+                            <span class="index-num">06</span>
+                            <h3>Creative Support Team</h3>
+                        </div>
+                        <div class="item-value-box">
+                            <p class="support-team-names">PRANA KRUSHNA, SANYASI, LIPU, BINU, BIKRAM, JITU & SUCHANA</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer section -->
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 SPANDAN TV ODISHA. All rights reserved.</p>
+        <div class="wide-container">
+            <p>&copy; 2025 SPANDAN TV ODISHA. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="scripts.js"></script>
