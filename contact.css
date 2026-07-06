@@ -1,120 +1,180 @@
-/* Contact Page Styles */
-#contact {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 5vh 0;
-    border-radius: 10px;
-    width: 80%;
-    margin: auto;
-    text-align: center;
+/* ==========================================================================
+   1. CONTACT HERO CONFIGURATION
+   ========================================================================== */
+#contact-hero {
+    padding: 200px 0 60px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
-.contact-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2vw;
-    margin-top: 3vh;
+.page-indicator {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    margin-bottom: 24px;
 }
 
-.contact-card {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    width: 30%;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
+.page-main-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: 24px;
+    text-transform: uppercase;
 }
 
-.contact-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+.page-subtitle {
+    max-width: 750px;
+    font-size: 1.2rem;
+    color: var(--studio-dim);
+    font-weight: 300;
+    line-height: 1.6;
 }
 
-.contact-card h2 {
-    color: #f4b400;
-    font-size: 1.5em;
+/* ==========================================================================
+   2. ASYMMETRIC DIRECTORY SYSTEM (Open Layout - No Cramped Boxes)
+   ========================================================================== */
+#contact-directory {
+    padding: 80px 0 140px 0;
 }
 
-.contact-card p a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: color 0.3s;
-}
-
-.contact-card p a:hover {
-    color: #f4b400;
-}
-
-/* Contact Form */
-.contact-form {
-    margin-top: 4vh;
+.directory-list {
     display: flex;
     flex-direction: column;
+    width: 100%;
+}
+
+.directory-item {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 48px;
+    padding: 48px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     align-items: center;
-    gap: 1.5vh;
+    transition: var(--ease-cinematic);
 }
 
-.contact-form input,
-.contact-form textarea {
-    width: 60%;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
+.directory-item:hover {
+    border-bottom-color: var(--studio-white);
 }
 
-.contact-form textarea {
-    height: 120px;
-    resize: none;
+.item-meta {
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
-.contact-form button {
-    background: #f4b400;
-    color: black;
-    padding: 12px 20px;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
+.index-num {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--accent-gold);
+    font-weight: 500;
 }
 
-.contact-form button:hover {
-    background: #e0a800;
-    transform: scale(1.05);
+.item-meta h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .contact-card {
-        width: 80%;
+.item-link-box {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.editorial-link, .editorial-plain-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--studio-white);
+    text-decoration: none;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 400;
+    transition: var(--ease-cinematic);
+}
+
+.editorial-link:hover {
+    color: var(--accent-gold);
+    transform: translateX(8px);
+}
+
+.inline-vector-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    display: block;
+}
+
+/* Specific styling for standard plain text handles like address mapping */
+.editorial-plain-text {
+    color: var(--studio-dim);
+    cursor: default;
+}
+
+.editorial-plain-text .inline-vector-icon {
+    color: var(--accent-gold);
+}
+
+/* ==========================================================================
+   3. RESPONSIVE TRANSLATION LAYER
+   ========================================================================== */
+@media (max-width: 968px) {
+    #contact-hero {
+        padding: 140px 0 40px 0;
+    }
+    
+    /* FIXES THE TEXT TRUNCATION BUG */
+    .page-main-title {
+        font-size: clamp(2.2rem, 8vw, 3.5rem) !important; /* Safely scales down title size on phone viewports */
+        letter-spacing: -1px !important;                 /* Reduces spacing weight to secure room */
+        line-height: 1.1 !important;
+        width: 100%;
+        word-wrap: break-word;
     }
 
-    .contact-form input,
-    .contact-form textarea {
-        width: 80%;
+    .directory-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 32px 0;
+        align-items: flex-start;
+    }
+    
+    .item-meta {
+        gap: 16px;
+    }
+    
+    .editorial-link {
+        font-size: 1.1rem !important; /* Keeps links from spilling over borders on tight screens */
     }
 }
-
-@media (max-width: 480px) {
-    .contact-card {
-        width: 90%;
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Force blocks to cut off any stray horizontal layout spill */
+    -webkit-font-smoothing: antialiased;
+}
+@media (max-width: 1200px) { /* Increased from 1024px to protect small laptop screens */
+    .editorial-row, .editorial-row.reverse {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 96px;
     }
-
-    .contact-form input,
-    .contact-form textarea {
-        width: 90%;
+    .editorial-image-block { 
+        height: 400px; 
     }
-
-    .contact-card h2 {
-        font-size: 1.2em;
+    .video-display-grid { 
+        grid-template-columns: 1fr; /* Snaps safely to single column on phones and laptops */
+        gap: 32px; 
     }
-
-    .contact-card p a {
-        font-size: 1em;
+    header { 
+        padding: 24px 32px; 
+    }
+    .hero-banner-flat { 
+        height: 60vh; 
     }
 }
